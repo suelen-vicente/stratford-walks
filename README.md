@@ -4,7 +4,7 @@ A mobile-first, multilingual walking tour prototype for Stratford, Ontario.
 
 ## Features
 - 7 clickable landmarks: Cooper Terminal → Downie Street → City Hall → Library → Perth County Courthouse → Shakespearean Gardens → Avon Boathouse
-- Leaflet/OpenStreetMap map, with **approximate prototype markers and straight dotted connectors (NOT pedestrian routing)**
+- Leaflet/OpenStreetMap map, with **user-supplied coordinates and a pedestrian routing preview (Valhalla)**
 - English, Brazilian Portuguese, Spanish content
 - On-device browser speech synthesis with Play/Stop (voice availability varies)
 - GPS position and optional proximity prompts while the page is active (requires HTTPS or localhost, permission, good accuracy)
@@ -37,3 +37,8 @@ Independent project; not affiliated with the City of Stratford, Stratford Festiv
 
 ## v0.1.3 pedestrian route preview
 The app requests a pedestrian route from the public Valhalla demo service on first load, then stores the resulting geometry in browser localStorage. A solid green line means a route was returned; dotted terracotta lines mean the service was unavailable. This public demo endpoint has no uptime guarantee and may enforce usage limits. The route and approximate landmark coordinates must be checked in person before tourist use. No key or paid service is required for this prototype.
+
+## v0.1.4 coordinate update
+Markers 1–7 now use coordinates supplied by project owner. The **Courthouse (stop 5)** and **Shakespearean Gardens (stop 6)** received identical coordinates (43.3715438, -80.9857614); this requires confirmation before publication. To make both numbered markers accessible in the meantime, they are visually offset a few pixels in opposite directions while both use their exact supplied geographic coordinates.
+
+The pedestrian routing query omits redundant consecutive duplicate waypoints and caches the resulting geometry under a key incorporating all route coordinates, so older geometry is never silently reused. The service worker and asset versions were incremented. The calculated route remains a preview and must be verified in person.
