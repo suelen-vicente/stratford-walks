@@ -9,3 +9,8 @@
 .maparea .leaflet-control-attribution{position:relative!important;right:auto!important;bottom:auto!important;transform:none!important;margin:0!important}
 #modalroot{position:relative;z-index:2000}
 @media(max-width:760px){.maparea .leaflet-top.leaflet-right{right:10px}}
+/* v0.1.2: Keep Leaflet in the map's stacking context, below dialogs. */
+.maparea{position:relative;isolation:isolate;overflow:hidden}
+.maparea .leaflet-top.leaflet-right{top:50%;right:12px;bottom:auto;transform:translateY(-50%)}
+.maparea .leaflet-control-zoom{margin:0!important}
+#modalroot{position:relative;z-index:2000}
