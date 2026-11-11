@@ -33,3 +33,7 @@ Upload these files to a static host such as Cloudflare Pages (Direct Upload) or 
 7. Test screen readers, accessibility and offline states.
 
 Independent project; not affiliated with the City of Stratford, Stratford Festival or Destination Stratford.
+
+
+## v0.1.3 pedestrian route preview
+The app requests a pedestrian route from the public Valhalla demo service on first load, then stores the resulting geometry in browser localStorage. A solid green line means a route was returned; dotted terracotta lines mean the service was unavailable. This public demo endpoint has no uptime guarantee and may enforce usage limits. The route and approximate landmark coordinates must be checked in person before tourist use. No key or paid service is required for this prototype.
